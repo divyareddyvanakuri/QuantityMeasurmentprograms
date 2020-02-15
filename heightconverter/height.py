@@ -2,13 +2,12 @@ from abc import ABC, abstractmethod
 
 
 class Length(ABC):
-    def __init__(self, value, conversion_factor):
-        self.value = value
+    def __init__(self, conversion_factor):
         self.conversion_factor = conversion_factor
 
     @abstractmethod
-    def comparisons_to_base(self):
-        pass
+    def __comparisons_to_base(self, value):
+        return value * self.conversion_factor
 
 
 class InchUnit(Length):
@@ -18,22 +17,25 @@ class InchUnit(Length):
 
 class FeetUnit(Length):
     def __init__(self):
-        super().__init__(1)
+        super().__init__(12)
 
 
 class Quantity(Length):
-    def __init__(self, value, conversion_factor):
-        super().__init__(value, conversion_factor)
+    def __init__(self, value, unit):
+        self.value = value
+        print(self.value)
+        self.unit = unit
+        super(Length, self).__init__()
+        print(self._Length__comparisons_to_base(self.value))
+
+    def _Length__comparisons_to_base(self,value):
+        pass
 
     def __eq__(self, other):
-        if self.value == other.value:
+        if self.value  == other.value:
             return True
         return False
-        print(self.conversion_factor)
-        print(other.conversion_factor)
-
-    def comparisons_to_base(self):
-        pass
+    
 
 
 # 1 inch = 1 inch
@@ -54,3 +56,8 @@ print("Is 1ft = 1ft: ", first_feet_object == second_feet_object)
 three_feet_object = Quantity(1, FeetUnit)
 four_feet_object = Quantity(2, FeetUnit)
 print("Is 1ft = 2ft: ", three_feet_object == four_feet_object)
+
+one_feet = Quantity(1, FeetUnit)
+twelve_inches = Quantity(12, InchUnit)
+
+print("Is 1ft = 12inches: ", one_feet == twelve_inches)
