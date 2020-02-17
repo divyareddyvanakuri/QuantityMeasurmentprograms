@@ -32,9 +32,9 @@ class Feet:
 
 
 myobject = Feet(1)
-# print(myobject.toinch())
-# print(myobject.tokilometer())
-# print(myobject.tometer())
-# print(myobject.tocntimeter())
-# print(myobject.tomillimeter())
+print(myobject.toinch())
+print(myobject.tokilometer())
+print(myobject.tometer())
+print(myobject.tocntimeter())
+print(myobject.tomillimeter())
 print(myobject.tonauticalmile())
