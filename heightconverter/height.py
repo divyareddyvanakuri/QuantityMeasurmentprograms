@@ -1,21 +1,21 @@
 from abc import ABC, abstractmethod
 
 
-class Length(ABC):
+class Height(ABC):
     def __init__(self, conversion_factor):
         self.conversion_factor = conversion_factor
 
-    @abstractmethod
-    def comparisons_to_base(self):
-        pass
+    
+    def comparisons_to_base(self,value):
+        return value*self.conversion_factor
 
 
-class InchUnit(Length):
+class InchUnit(Height):
     def __init__(self):
         super().__init__(1)
 
 
-class FeetUnit(Length):
+class FeetUnit(Height):
     def __init__(self):
         super().__init__(12)
 
