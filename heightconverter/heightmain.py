@@ -12,9 +12,6 @@ class Quantity:
 
     def comparisons_to_base(self):
         pass
-
-    # def __str__(self):
-    #     return self.conversion_factor
         
     def __eq__(self, other):
         if self.value  == other.value:
