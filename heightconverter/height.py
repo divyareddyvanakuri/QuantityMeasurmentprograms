@@ -22,8 +22,8 @@ class FeetUnit(Length):
 
 
 class Quantity(Length):
-    def __init__(self, conversion_factor,value, unit):
-        super().__init__(conversion_factor)
+    def __init__(self,value, unit):
+        super().__init__(self)
         self.value = value
         print(self.value)
         self.unit = unit
@@ -45,24 +45,24 @@ class Quantity(Length):
     
 
 
-# # 1 inch = 1 inch
-# first_inch_object = Quantity(1, InchUnit)
-# second_inch_object = Quantity(1, InchUnit)
-# print("Is 1inch = 1inch: ", first_inch_object == second_inch_object)
-# # 1 inch != 2 inch
-# three_inch_object = Quantity(1, InchUnit)
-# four_inch_object = Quantity(2, InchUnit)
-# print("Is 1inch = 2inch: ", three_inch_object == four_inch_object)
+# 1 inch = 1 inch
+first_inch_object = Quantity(1, InchUnit)
+second_inch_object = Quantity(1, InchUnit)
+print("Is 1inch = 1inch: ", first_inch_object == second_inch_object)
+# 1 inch != 2 inch
+three_inch_object = Quantity(1, InchUnit)
+four_inch_object = Quantity(2, InchUnit)
+print("Is 1inch = 2inch: ", three_inch_object == four_inch_object)
 
-# # 1 ft = 1 ft
-# first_feet_object = Quantity(1, FeetUnit)
-# second_feet_object = Quantity(1, FeetUnit)
-# print("Is 1ft = 1ft: ", first_feet_object == second_feet_object)
+# 1 ft = 1 ft
+first_feet_object = Quantity(1, FeetUnit)
+second_feet_object = Quantity(1, FeetUnit)
+print("Is 1ft = 1ft: ", first_feet_object == second_feet_object)
 
-# # 1 ft = 2 ft
-# three_feet_object = Quantity(1, FeetUnit)
-# four_feet_object = Quantity(2, FeetUnit)
-# print("Is 1ft = 2ft: ", three_feet_object == four_feet_object)
+# 1 ft = 2 ft
+three_feet_object = Quantity(1, FeetUnit)
+four_feet_object = Quantity(2, FeetUnit)
+print("Is 1ft = 2ft: ", three_feet_object == four_feet_object)
 
 one_feet = Quantity(1, FeetUnit)
 twelve_inches = Quantity(12, InchUnit)
