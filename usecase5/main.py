@@ -1,5 +1,6 @@
 from volume import Volume,GallonUnit,LitreUnit,MlUnit
 
+#Implemented the Composition class for volume
 class Qunatity:
     def __init__(self,value,unit):
         self.value = value
