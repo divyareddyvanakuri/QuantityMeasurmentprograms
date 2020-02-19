@@ -5,7 +5,6 @@ from ftandinchobjcls import Length
 #This is the composition class for feet and inch objects
 class Quantity:
     def __init__(self, value, unit):
-
         self.value = value
         self.unit = unit
 
