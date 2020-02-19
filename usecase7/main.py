@@ -1,11 +1,11 @@
 from weights import KgUnit, GramUnit, TonneUnit
 
-
+#Implemented the composition class for weight
 class Qunatity:
     def __init__(self, value, unit):
         self.value = value
         self.unit = unit
-
+    
     def __eq__(self, other):
         self.factor = int(self.unit.comparison_to_base(self.value))
         other.factor = int(other.unit.comparison_to_base(other.value))
