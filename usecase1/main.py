@@ -9,16 +9,22 @@ class Quantity:
         self.unit = unit
 
     def __eq__(self, other):
-        self.factor = str(self.unit.comparisons_to_base(self.value))
-        other.factor = str(other.unit.comparisons_to_base(other.value))
+        self.factor = int(self.unit.comparisons_to_base(self.value))
+        other.factor = int(other.unit.comparisons_to_base(other.value))
         if self.factor == other.factor:
             return True
         return False
 
 # 1 inch = 1 inch
-first_inch_object = Quantity(1, InchUnit())
-second_inch_object = Quantity(1, InchUnit())
-print("Is 1inch = 1inch:", first_inch_object == second_inch_object)
+try:
+    first_inch_object = Quantity("", InchUnit())
+    second_inch_object = Quantity(1, InchUnit())
+    print("Is 1inch = 1inch:", first_inch_object == second_inch_object)
+except NameError as e:
+    print("Runtime Error:",e)
+except ValueError as e:
+    print("Runtime Error:",e)
+
 # 1 inch != 2 inch
 three_inch_object = Quantity(1, InchUnit())
 four_inch_object = Quantity(2, InchUnit())
